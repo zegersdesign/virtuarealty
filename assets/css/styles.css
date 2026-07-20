@@ -1,0 +1,198 @@
+:root {
+  --azul: #0b5fff;
+  --azul-osc: #0843b8;
+  --tinta: #0f172a;
+  --gris: #64748b;
+  --gris-claro: #f1f5f9;
+  --linea: #e2e8f0;
+  --verde-wsp: #25d366;
+  --blanco: #ffffff;
+  --radio: 14px;
+  --sombra: 0 6px 24px rgba(15, 23, 42, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--tinta);
+  background: var(--gris-claro);
+  line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; }
+
+.contenedor { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+
+/* Barra superior */
+.topbar {
+  background: var(--blanco);
+  border-bottom: 1px solid var(--linea);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.topbar .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.marca { font-weight: 800; font-size: 20px; color: var(--azul); letter-spacing: -0.5px; }
+.marca span { color: var(--tinta); }
+.topbar .tel { font-size: 14px; color: var(--gris); text-decoration: none; }
+
+/* Tarjeta principal */
+.ficha {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  margin: 20px 0 40px;
+}
+
+/* Galeria */
+.galeria { position: relative; background: #000; }
+.galeria .principal { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.galeria .badge {
+  position: absolute; top: 14px; left: 14px;
+  background: var(--azul); color: #fff;
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 999px; letter-spacing: 0.5px;
+}
+.miniaturas {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 6px; padding: 6px; background: #000;
+}
+.miniaturas img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border-radius: 8px; cursor: pointer; opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.miniaturas img:hover, .miniaturas img.activa { opacity: 1; outline: 2px solid var(--azul); }
+
+/* Cuerpo de la ficha */
+.cuerpo { padding: 22px; }
+.cuerpo h1 { font-size: 24px; line-height: 1.25; margin-bottom: 4px; }
+.ubic { color: var(--gris); font-size: 15px; margin-bottom: 14px; }
+.precio { font-size: 28px; font-weight: 800; color: var(--azul); margin-bottom: 18px; }
+.precio small { font-size: 14px; font-weight: 500; color: var(--gris); }
+
+.specs {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px; margin-bottom: 22px;
+}
+.spec {
+  background: var(--gris-claro); border-radius: 10px;
+  padding: 12px 8px; text-align: center;
+}
+.spec b { display: block; font-size: 18px; }
+.spec span { font-size: 12px; color: var(--gris); }
+
+.seccion-titulo {
+  font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px; color: var(--gris); margin: 22px 0 10px;
+}
+.descripcion { color: #334155; }
+
+.destacados { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.destacados li {
+  background: #eef4ff; color: var(--azul-osc);
+  font-size: 13px; font-weight: 600;
+  padding: 6px 12px; border-radius: 999px;
+}
+
+/* Tour 360 */
+.tour360 { width: 100%; height: 360px; border-radius: 12px; overflow: hidden; background: #111; }
+.tour-aviso { font-size: 12px; color: var(--gris); margin-top: 6px; }
+
+/* Botones */
+.acciones { display: flex; gap: 10px; margin: 24px 0 4px; flex-wrap: wrap; }
+.btn {
+  flex: 1; min-width: 160px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 18px; border-radius: 12px; border: none;
+  font-size: 16px; font-weight: 700; cursor: pointer; text-decoration: none;
+}
+.btn-wsp { background: var(--verde-wsp); color: #fff; }
+.btn-wsp:hover { filter: brightness(0.95); }
+.btn-sec { background: var(--blanco); color: var(--tinta); border: 1px solid var(--linea); }
+.btn-sec:hover { background: var(--gris-claro); }
+
+/* Boton flotante WhatsApp */
+.wsp-flotante {
+  position: fixed; right: 18px; bottom: 18px; z-index: 50;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: var(--verde-wsp); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; text-decoration: none;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+/* Boton de cabecera */
+.btn-cabecera {
+  background: var(--azul); color: #fff; text-decoration: none;
+  font-size: 14px; font-weight: 700; padding: 9px 16px; border-radius: 999px;
+}
+.btn-cabecera:hover { background: var(--azul-osc); }
+
+/* Grilla de portada */
+.hero-portada { padding: 26px 0 8px; }
+.hero-portada h1 { font-size: 26px; line-height: 1.2; }
+.hero-portada p { color: var(--gris); margin-top: 6px; }
+
+.grilla {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 18px; margin: 20px 0 40px;
+}
+.tarjeta {
+  background: var(--blanco); border-radius: var(--radio);
+  box-shadow: var(--sombra); overflow: hidden; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; transition: transform 0.12s;
+}
+.tarjeta:hover { transform: translateY(-3px); }
+.tarjeta .foto { position: relative; aspect-ratio: 16 / 11; background: #e2e8f0; }
+.tarjeta .foto img { width: 100%; height: 100%; object-fit: cover; }
+.tarjeta .badge {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--azul); color: #fff; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 999px;
+}
+.tarjeta .badge.tour360 { left: auto; right: 10px; background: rgba(15,23,42,0.85); }
+.tarjeta .info { padding: 14px; }
+.tarjeta .info .precio-card { font-size: 18px; font-weight: 800; color: var(--azul); }
+.tarjeta .info h3 { font-size: 16px; margin: 4px 0 2px; }
+.tarjeta .info .ubic-card { font-size: 13px; color: var(--gris); }
+.tarjeta .mini-specs { font-size: 12px; color: var(--gris); margin-top: 8px; }
+
+.vacio { text-align: center; color: var(--gris); padding: 40px 0; }
+
+/* Formulario de carga */
+.form-carga { background: var(--blanco); border-radius: var(--radio); box-shadow: var(--sombra); padding: 24px; margin: 20px 0 40px; }
+.campo { margin-bottom: 16px; }
+.campo label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.campo input, .campo textarea, .campo select {
+  width: 100%; padding: 11px 12px; border: 1px solid var(--linea);
+  border-radius: 10px; font-size: 15px; font-family: inherit;
+}
+.campo textarea { resize: vertical; min-height: 84px; }
+.fila { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.fila-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.ayuda { font-size: 12px; color: var(--gris); margin-top: 4px; }
+.previa { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.previa img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; }
+
+footer { text-align: center; color: var(--gris); font-size: 13px; padding: 30px 16px 90px; }
+
+@media (max-width: 560px) {
+  .grilla { grid-template-columns: 1fr; }
+  .fila, .fila-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* Movil */
+@media (max-width: 560px) {
+  .cuerpo h1 { font-size: 20px; }
+  .precio { font-size: 24px; }
+  .specs { grid-template-columns: repeat(2, 1fr); }
+  .tour360 { height: 280px; }
+}

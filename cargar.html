@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VivaTour — Publicar propiedad</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="contenedor">
+      <a class="marca" href="index.html" style="text-decoration:none;">Viva<span>Tour</span></a>
+      <a class="btn-cabecera" href="index.html">Ver propiedades</a>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="hero-portada">
+      <h1>Publicar una propiedad</h1>
+      <p>Completa los datos, sube las fotos y el tour 360. Se publica al instante.</p>
+    </section>
+
+    <form class="form-carga" id="formCarga">
+      <div class="campo">
+        <label>Titulo</label>
+        <input type="text" name="titulo" required placeholder="Ej: Departamento con vista en Providencia" />
+      </div>
+
+      <div class="fila">
+        <div class="campo">
+          <label>Operacion</label>
+          <select name="operacion" id="operacion">
+            <option value="venta">Venta</option>
+            <option value="arriendo">Arriendo</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label id="lblPrecio">Precio (UF)</label>
+          <input type="number" name="precio" id="precio" required min="0" step="any" placeholder="12500" />
+        </div>
+      </div>
+
+      <div class="fila">
+        <div class="campo">
+          <label>Comuna</label>
+          <input type="text" name="comuna" required placeholder="Providencia" />
+        </div>
+        <div class="campo">
+          <label>Ciudad</label>
+          <input type="text" name="ciudad" value="Santiago" required />
+        </div>
+      </div>
+
+      <div class="fila-4">
+        <div class="campo"><label>Dormitorios</label><input type="number" name="dormitorios" min="0" value="2" /></div>
+        <div class="campo"><label>Banos</label><input type="number" name="banos" min="0" value="1" /></div>
+        <div class="campo"><label>m&sup2; utiles</label><input type="number" name="metrosUtiles" min="0" value="60" /></div>
+        <div class="campo"><label>Estac.</label><input type="number" name="estacionamientos" min="0" value="1" /></div>
+      </div>
+
+      <div class="campo">
+        <label>Descripcion</label>
+        <textarea name="descripcion" placeholder="Describe la propiedad..."></textarea>
+      </div>
+
+      <div class="campo">
+        <label>Destacados (separa con comas)</label>
+        <input type="text" name="destacados" placeholder="Estacionamiento, Bodega, Piscina" />
+      </div>
+
+      <div class="campo">
+        <label>WhatsApp del corredor</label>
+        <input type="text" name="whatsapp" value="56912345678" required />
+        <p class="ayuda">Formato internacional sin + ni espacios. Ej: 56912345678</p>
+      </div>
+
+      <div class="campo">
+        <label>Fotos</label>
+        <input type="file" id="fotos" accept="image/*" multiple />
+        <p class="ayuda">Puedes elegir varias. La primera sera la portada.</p>
+        <div class="previa" id="previaFotos"></div>
+      </div>
+
+      <div class="campo">
+        <label>Foto 360 (equirectangular)</label>
+        <input type="file" id="tour360" accept="image/*" />
+        <p class="ayuda">Imagen panoramica de tu camara Insta360. Opcional.</p>
+        <div class="previa" id="previaTour"></div>
+      </div>
+
+      <button type="submit" class="btn btn-wsp" style="width:100%;">Publicar propiedad</button>
+    </form>
+  </main>
+
+  <footer>VivaTour — Corredora 100% digital · Demo MVP</footer>
+
+  <script src="assets/data/propiedades.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/cargar.js"></script>
+</body>
+</html>
